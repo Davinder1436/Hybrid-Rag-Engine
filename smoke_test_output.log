@@ -1,0 +1,30 @@
+
+======================================================================
+HYBRID RAG SMOKE TEST
+======================================================================
+
+[1/6] Loading data...
+  ✓ Loaded 200 passages
+  ✓ Loaded 2 queries
+
+[2/6] Testing Sparse Retriever (BM25)...
+
+[BM25] Building index from 200 passages...
+  Tokenizing passages...
+  Tokenizing:   0%|          | 0/200 [00:00<?, ?it/s]                                                       Building BM25 index...
+  ✓ BM25 index built: 200 passages
+  ✓ BM25 index built: 200 passages
+  ✓ Search returned 10 results
+    Top result: Louis Stevens (writer) (score: 10.6426)
+
+[3/6] Testing Dense Retriever (FAISS)...
+
+[Dense] Loading model: sentence-transformers/all-MiniLM-L6-v2
+  Device: mps
+  Encoding 200 passages (may take a moment)...
+
+[Dense] Building index from 200 passages...
+  Encoding 200 passages...
+Batches:   0%|          | 0/4 [00:00<?, ?it/s]Batches:  25%|██▌       | 1/4 [00:00<00:00,  4.09it/s]Batches:  50%|█████     | 2/4 [00:00<00:00,  5.41it/s]Batches: 100%|██████████| 4/4 [00:00<00:00,  4.93it/s]Batches: 100%|██████████| 4/4 [00:00<00:00,  4.91it/s]
+/Users/dave/miniforge3/envs/research/lib/python3.10/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
